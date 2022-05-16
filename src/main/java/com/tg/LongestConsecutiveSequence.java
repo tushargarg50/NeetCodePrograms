@@ -34,9 +34,9 @@ public class LongestConsecutiveSequence {
      * Space Complexity : O(n)
      */
     public int longestConsecutiveSequence(int[] nums) {
-        int maxLength = 1;
+        int maxLength = 0;
         Set<Integer> integerSet = Arrays.stream(nums).boxed().collect(Collectors.toSet());
-        for (int i : nums) {
+        for (int i : integerSet) {
             if (!integerSet.contains(i - 1)) {
                 int length = 1;
                 while (integerSet.contains(i + length)) {
